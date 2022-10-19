@@ -4,7 +4,6 @@ using System.Security.Cryptography;
 using System.Text.Json;
 using System.Text;
 using System.Text.Json.Serialization;
-using Newtonsoft.Json;
 
 namespace AppCitas.Data
 {
@@ -17,7 +16,8 @@ namespace AppCitas.Data
             var userData = await System.IO.File.ReadAllTextAsync("Data/UserSeedData.json");
             //var users = JsonSerializer.Deserialize<List<AppUser>>(userData);
 
-            var users = JsonConvert.DeserializeObject<List<AppUser>>(userData);
+            //var users = JsonConvert.DeserializeObject<List<AppUser>>(userData);
+            var users = System.Text.Json.JsonSerializer.Deserialize<List<AppUser>>(userData);
 
             foreach (var user in users)
             {
