@@ -29,7 +29,7 @@ namespace AppCitas.Services
                 var uploadParams = new ImageUploadParams
                 {
                     File = new FileDescription(photoFile.FileName, stream),
-                    Transformation = new Transformation().Height(500).Width(500).Crop("Fill").Gravity("Face")
+                    Transformation = new Transformation().Height(500).Width(500).Crop("fill").Gravity("face")
                 };
                 uploadResult = await _cloudinary.UploadAsync(uploadParams);
             }
