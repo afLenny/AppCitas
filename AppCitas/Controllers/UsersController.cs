@@ -2,6 +2,7 @@
 using AppCitas.DTOs;
 using AppCitas.Entities;
 using AppCitas.Extensions;
+using AppCitas.Helpers;
 using AppCitas.Interfaces;
 using AppCitas.Services;
 using AutoMapper;
@@ -28,9 +29,14 @@ namespace AppCitas.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers()
+        public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers([FromQuery] UserParams userParams)
         {
-            var users = await _userRepository.GetMembersAsync();
+            var users = await _userRepository.GetMembersAsync(userParams);
+            Response.AddPaginationHeader(
+                users.CurrentPage,
+                users.PageSize,
+                users.TotalCount,
+                users.TotalPages);
 
             return Ok(users);
         }

@@ -1,5 +1,6 @@
 ﻿using AppCitas.DTOs;
 using AppCitas.Entities;
+using AppCitas.Helpers;
 
 namespace AppCitas.Interfaces
 {
@@ -12,6 +13,6 @@ namespace AppCitas.Interfaces
         void Update(AppUser user);
 
         Task<MemberDto> GetMemberAsync(string username);
-        Task<IEnumerable<MemberDto>> GetMembersAsync();
+        Task<PagedList<MemberDto>> GetMembersAsync(UserParams userParams);
     }
 }
