@@ -1,6 +1,7 @@
 ﻿using AppCitas.DTOs;
 using AppCitas.Entities;
 using AppCitas.Extensions;
+using AppCitas.Helpers;
 using AppCitas.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
@@ -50,6 +51,17 @@ namespace AppCitas.Controllers
                 return Ok(_mapper.Map<MessageDto>(message));
 
             return BadRequest("Failed to send the message");
+        }
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<MessageDto>>> GetMessagesForUser
+            ([FromQuery] MessageParams messagesParams)
+        {
+            messagesParams.Username = User.GetUsername();
+
+            var messages = await _messageRepository.GetMessagesForUser(messagesParams);
+            Response.AddPaginationHeader(messages.CurrentPage, messages.PageSize, messages.TotalCount, messages.TotalPages);
+
+            return messages;
         }
     }
 }
