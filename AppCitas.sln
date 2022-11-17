@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppCitas", "AppCitas\AppCitas.csproj", "{DF5CB16E-A4E5-4B82-90BD-CDE7E5CC9292}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppCitas", "AppCitas\AppCitas.csproj", "{DF5CB16E-A4E5-4B82-90BD-CDE7E5CC9292}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppCitas.UnitTests", "AppCitas.UnitTests\AppCitas.UnitTests.csproj", "{8BD785F9-8614-4C1F-9C27-EE999DF1D04B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DF5CB16E-A4E5-4B82-90BD-CDE7E5CC9292}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF5CB16E-A4E5-4B82-90BD-CDE7E5CC9292}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF5CB16E-A4E5-4B82-90BD-CDE7E5CC9292}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BD785F9-8614-4C1F-9C27-EE999DF1D04B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BD785F9-8614-4C1F-9C27-EE999DF1D04B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BD785F9-8614-4C1F-9C27-EE999DF1D04B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BD785F9-8614-4C1F-9C27-EE999DF1D04B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
