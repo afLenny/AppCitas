@@ -24,7 +24,7 @@ namespace AppCitas.UnitTests.Tests
             _client = TestHelper.Instance.Client;
         }
         [Theory]
-        [InlineData("BadRequest", "lisa", "Pa$$w0rd", "lisa", "Hola")]
+        [InlineData("BadRequest", "louise", "Pa$$w0rd", "louise", "Hola")]
         public async Task CreateMessage_ShouldBadRequest(string statusCode, string username, string password, string recipientUsername, string content)
         {
             // Arrange
@@ -48,7 +48,7 @@ namespace AppCitas.UnitTests.Tests
             Assert.Equal(statusCode, httpResponse.StatusCode.ToString());
         }
         [Theory]
-        [InlineData("NotFound", "lisa", "Pa$$w0rd", "pedritosola", "Hola")]
+        [InlineData("NotFound", "lisa", "Pa$$w0rd", "kakaroto", "Hola")]
         public async Task CreateMessage_ShouldNotFound(string statusCode, string username, string password, string recipientUsername, string content)
         {
             // Arrange

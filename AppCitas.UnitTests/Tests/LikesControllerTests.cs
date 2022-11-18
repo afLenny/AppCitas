@@ -68,7 +68,7 @@ namespace AppCitas.UnitTests.Tests
         }
 
         [Theory]
-        [InlineData("OK", "todd", "Pa$$w0rd", "lisa")]
+        [InlineData("OK", "rosa", "Pa$$w0rd", "wagner")]
         public async Task AddLike_ShouldOK(string statusCode, string username, string password, string userLiked)
         {
             // Arrange
@@ -87,7 +87,7 @@ namespace AppCitas.UnitTests.Tests
         }
 
         [Theory]
-        [InlineData("BadRequest", "lisa", "Pa$$w0rd", "todd")]
+        [InlineData("BadRequest", "rosa", "Pa$$w0rd", "wagner")]
         public async Task AddLike_ShouldBadRequest2(string statusCode, string username, string password, string userLiked)
         {
             // Arrange
